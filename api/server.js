@@ -6,8 +6,8 @@ server.use(express.json())
 
 server.use('/api/recipes', recipesRouter)
 
-server.get('/', (req, res) => {
-  res.send(`<h2>Hello from sprint 14 Module 4 Project!</h2>`);
-});
+server.use('*', (req, res) => {
+  res.json({ message: 'api is running 😊'})
+})
 
 module.exports = server;
